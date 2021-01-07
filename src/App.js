@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const App = () => {
+
+  const [icount,set] = useState(0);
+
+  function dec(){
+    set(icount-1);
+  }
+  function inc(){
+    set(icount+1);
+  }
+
+  return(
+    <>
+      <div className='main'>
+        <h1>Counter</h1>
+        <div className='inner'>
+          <button onClick = {dec} className='inc'>-</button>
+          <p>{(icount>=0 && icount<10)?"0"+icount:icount}</p>
+          <button onClick = {inc} className='dec'>+</button>
+        </div>
+      </div>
+    </>
   );
 }
 
