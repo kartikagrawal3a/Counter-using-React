@@ -4,10 +4,10 @@ const App = () => {
 
   const [icount,set] = useState(0);
 
-  function dec(){
+  const dec = () => {
     set(icount-1);
   }
-  function inc(){
+  const inc = () => {
     set(icount+1);
   }
 
